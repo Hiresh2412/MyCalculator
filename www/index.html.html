@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Welcome page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="js/jquery.mobile-1.4.5.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.mobile-1.4.5.js"></script>
+	<script> src="cordova.js"</script>
+    <script>
+        function calculate() {
+            debugger;
+            //get values
+            var num1 = document.getElementById("num1").value;
+            var num2 = document.getElementById("num2").value;
+            var operator = document.getElementById("operator").value;
+            var sign;
+            var result;
+            //calculate
+            if(operator==1){
+                sign="+";
+                result= Number(num1) + Number(num2);
+            }
+            if(operator==2){
+                sign="-";
+                result= num1 - num2;
+            }
+            if(operator==3){
+                sign="*";
+                result= num1 * num2;
+            }
+            if(operator==4){
+                sign="/";
+                result= num1 / num2;
+            }
+            //print
+            document.getElementById("result").innerHTML ="Operation : <br>" + num1 + sign + num2 + 
+            "<br> Results:"+ result;
+             
+        }
+    </script>
+</head>
+
+<!---Home page--->
+
+<body>
+    <div data-role="page" id="pageone" data-theme="a">
+        <!-- Header-->
+        <div data-role="header">
+            <h3>Simple Calculator</h3>
+            <!-- Navigation-->
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#pageone" class="ui-btn-active ui-state-persist" data-icon="home">Home</a></li>
+                    <li><a href="#pagetwo" class="ui-btn" data-icon="grid">Calculator</a></li>
+                    <li><a href="#pagethree" class="ui-btn" data-icon="info">Help</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- content-->
+        <div data-role="main" class="ui-content">
+            <p>This is a JQuery mobile exercise which provides the user with a calculator for basic mathematical
+                operations</p>
+        </div>
+        <!-- Footer-->
+        <div data-role="footer">
+            <h3>Homework</h3>
+        </div>
+
+    </div>
+
+</body>
+
+<!---calculator page--->
+
+<body>
+    <div data-role="page" id="pagetwo" data-theme="a">
+        <!-- Header-->
+        <div data-role="header">
+            <h3>Simple Calculator</h3>
+            <!-- Navigation-->
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#pageone" class="ui-btn" data-icon="home">Home</a></li>
+                    <li><a href="#pagetwo" class="ui-btn-active ui-state-persist" data-icon="grid">Calculator</a></li>
+                    <li><a href="#pagethree" class="ui-btn" data-icon="info">Help</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- content-->
+        <div data-role="main" class="ui-content">
+            <div class="ui-field-contain">
+                <input type="number" name="num1" id="num1">
+                <select name="operator" id="operator">
+                    <option value="1">+</option>
+                    <option value="2">-</option>
+                    <option value="3">*</option>
+                    <option value="4">/</option>
+                </select>
+                <input type="number" name="number2" id="num2">
+                <a href="#pagefour" class="ui-btn" onclick="calculate()">Calculate</a>
+
+            </div>
+        </div>
+        <!-- Footer-->
+        <div data-role="footer">
+            <h3>Homework</h3>
+        </div>
+    </div>
+</body>
+
+<!---Help page--->
+
+<body>
+    <div data-role="page" id="pagethree" data-theme="a">
+        <!-- Header-->
+        <div data-role="header">
+            <h3>Simple Calculator</h3>
+            <!-- Navigation-->
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#pageone" class="ui-btn" data-icon="home">Home</a></li>
+                    <li><a href="#pagetwo" class="ui-btn" data-icon="grid">Calculator</a></li>
+                    <li><a href="#pagethree" class="ui-btn-active ui-state-persist" data-icon="info">Help</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- content-->
+        <div data-role="main" class="ui-content">
+            <p>This is the help section and provides basic information about how to use the calculator.</p>
+            <a href="#pagefive" class="ui-btn ui-icon-info ui-btn-icon-left">More Info</a>
+        </div>
+        <!-- Footer-->
+        <div data-role="footer">
+            <h3>Homework</h3>
+        </div>
+    </div>
+</body>
+
+<!--Result page-->
+
+<body>
+    <div data-role="page" id="pagefour" data-theme="a">
+        <!-- Header-->
+        <div data-role="header">
+            <h3>Simple Calculator</h3>
+            <!-- Navigation-->
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#pageone" class="ui-btn" data-icon="home">Home</a></li>
+                    <li><a href="#pagetwo" class="ui-btn" data-icon="grid">Calculator</a></li>
+                    <li><a href="#pagethree" class="ui-btn" data-icon="info">Help</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- content-->
+        <div data-role="main" class="ui-content">
+            <p id="result"></p>
+            <a href="#" data-rel="back" class="ui-btn ui-icon-back ui-btn-icon-left">Back</a>
+        </div>
+        <!-- Footer-->
+        <div data-role="footer">
+            <h3>Homework</h3>
+        </div>
+    </div>
+</body>
+
+<!--More info page-->
+
+<body>
+    <div data-role="page" id="pagefive" data-theme="a" data-dialog="true">
+        <!-- Header-->
+        <div data-role="header">
+            <h3>More Info</h3>
+            <!-- Navigation
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#pageone" class="ui-btn" data-icon="home">Home</a></li>
+                    <li><a href="#pagetwo" class="ui-btn" data-icon="grid">Calculator</a></li>
+                    <li><a href="#pagethree" class="ui-btn" data-icon="info">Help</a></li>
+                </ul>
+            </div>-->
+        </div>
+        <!-- content-->
+        <div data-role="main" class="ui-content">
+            <p>You have requested more information about the App!</p>
+            <a href="#" data-rel="back" class="ui-btn ui-icon-back ui-btn-icon-left">Dismiss</a>
+        </div>
+        <!-- Footer
+        <div data-role="footer">
+            <h3>Homework</h3>
+        </div>-->
+    </div>
+</body>
+
+</html>
